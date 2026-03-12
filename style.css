@@ -358,3 +358,144 @@ a:hover {
     height: 240px;
   }
 }
+
+button {
+  font: inherit;
+}
+
+.hero-buttons button.btn {
+  cursor: pointer;
+  border: 1px solid var(--panel-border);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 9999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-box {
+  position: relative;
+  width: min(720px, 100%);
+  background: #0f172a;
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  padding: 2rem;
+  transform: translateY(16px) scale(0.98);
+  transition: transform 0.25s ease;
+}
+
+.modal-overlay.active .modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #ffffff;
+}
+
+.modal-intro {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+.service-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.service-card.active {
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 0 0 24px rgba(56, 189, 248, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.project-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.project-form label {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.project-form input,
+.project-form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 0.95rem 1rem;
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+}
+
+.project-form input::placeholder,
+.project-form textarea::placeholder {
+  color: var(--muted);
+}
+
+.project-form input:focus,
+.project-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(110, 231, 249, 0.08);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .modal-box {
+    padding: 1.25rem;
+  }
+}

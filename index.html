@@ -24,25 +24,28 @@
 
     <section class="hero">
       <div class="hero-text">
-        <p class="eyebrow">Secure Web Development • Infrastructure • Application Security</p>
-        <h1>Building reliable web systems with a security-first mindset.</h1>
+        <p class="eyebrow">Website Design, Structure, and Performance</p>
+        <h1>Creating modern websites with strong structure, performance, and usability.</h1>
         <p class="hero-description">
-          I build and manage web experiences with a focus on secure development,
-          deployment, authentication, and the systems that keep sites organized,
-          functional, and resilient.
+          I build well-structured websites designed for usability,
+          performance, and search visibility while keeping the
+          technical foundation clean and reliable.
         </p>
 
         <div class="hero-buttons">
-          <a class="btn btn-primary" href="#projects">View Projects</a>
-          <a
-            class="btn btn-secondary"
-            href="https://github.com/ash-the-dev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </div>
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <button class="btn btn-secondary" id="open-modal-btn" type="button">
+        Start a Project
+        </button>
+         <a
+        class="btn btn-secondary"
+      href="https://github.com/ash-the-dev"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    GitHub
+  </a>
+</div>
 
         <p class="hero-note">
           Currently completing a B.S. in Cybersecurity Engineering.
@@ -64,16 +67,16 @@
       <div class="about-grid">
         <div class="card">
           <p>
-            I’m Ash Morales, and my work sits at the intersection of web
-            development, infrastructure, and practical security. I enjoy building
-            systems that are not only functional, but organized, maintainable,
-            and designed with risk in mind.
+          I’m Ash Morales. I design and build websites with an emphasis on
+          clarity, structure, and long-term usability. I enjoy creating web
+          experiences that are easy to navigate, well organized behind the
+          scenes, and built on reliable technical foundations.
           </p>
           <p>
-            My experience includes developing secure web applications, working
-            with authentication and structured data, managing deployments,
-            handling version control, and maintaining the technical foundations
-            that support business-facing websites.
+          My experience includes designing and building websites, organizing
+          content and structure for clarity and usability, and implementing the
+          technical systems behind the scenes that support performance,
+          deployment, and long-term maintainability.
           </p>
         </div>
 
@@ -97,14 +100,16 @@
       </div>
 
       <div class="projects-grid">
-        <article class="project-card">
-          <p class="project-tag">Application Security</p>
-          <h3>Secure Web Application</h3>
-          <p>
-            A web application centered on authentication, structured data
-            handling, and secure development practices, built to strengthen both
-            usability and system integrity.
-          </p>
+  <article class="project-card">
+    <p class="project-tag">Web Application</p>
+    <h3>Custom Web Application</h3>
+    <p>
+      A custom-built web application focused on clear structure,
+      authentication workflows, and organized data handling.
+      The project explores how thoughtful design and clean
+      implementation can support usability, performance,
+      and reliable site functionality.
+    </p>
           <a
             href="https://github.com/ash-the-dev"
             target="_blank"
@@ -229,6 +234,65 @@
   <footer class="site-footer">
     <p>© 2026 Ash Morales. Built in VS Code and deployed with GitHub Pages.</p>
   </footer>
+
+  <div class="modal-overlay" id="project-modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="close-modal-btn" aria-label="Close modal">&times;</button>
+
+    <p class="section-label">Start a Project</p>
+    <h2 id="modal-title">What are you interested in?</h2>
+    <p class="modal-intro">
+      Select a service to begin, then tell me a little about what you're looking for.
+    </p>
+
+    <div class="service-options">
+      <button type="button" class="service-card" data-service="Website Design">
+        <span>Website Design</span>
+      </button>
+
+      <button type="button" class="service-card" data-service="Website Redesign">
+        <span>Website Redesign</span>
+      </button>
+
+      <button type="button" class="service-card" data-service="SEO Improvements">
+        <span>SEO Improvements</span>
+      </button>
+
+      <button type="button" class="service-card" data-service="Website Setup and Deployment">
+        <span>Website Setup & Deployment</span>
+      </button>
+
+      <button type="button" class="service-card" data-service="Technical Consultation">
+        <span>Technical Consultation</span>
+      </button>
+    </div>
+
+    <form
+      class="project-form"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST"
+    >
+      <input type="hidden" name="selected_service" id="selected-service-input" value="" />
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="message">Project Details</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="6"
+        placeholder="Tell me about your project..."
+        required
+      ></textarea>
+
+      <button type="submit" class="btn btn-primary">Send Inquiry</button>
+    </form>
+  </div>
+</div>
 
   <script src="script.js"></script>
 </body>
