@@ -499,3 +499,6 @@ body.modal-open {
     padding: 1.25rem;
   }
 }
+.hero h1 {
+  max-width: 720px;
+}
