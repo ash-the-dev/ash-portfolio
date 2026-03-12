@@ -1,104 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ash Morales | Developer Portfolio</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ash Morales | Secure Web Developer</title>
+  <meta
+    name="description"
+    content="Portfolio of Ash Morales, a cybersecurity engineering student focused on secure web development, infrastructure, and WordPress systems."
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <header class="site-header">
+    <nav class="nav">
+      <div class="logo">Ash the Dev</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-<header>
-<h1>Ash Morales</h1>
-<p>Cybersecurity Engineering Student • Web Developer • Infrastructure Builder</p>
-</header>
+    <section class="hero">
+      <p class="eyebrow">Cybersecurity Engineering Student</p>
+      <h1>Building web systems with a security-first mindset.</h1>
+      <p class="hero-text">
+        I work at the intersection of web development, infrastructure, and
+        application security, with hands-on experience in WordPress, GoDaddy,
+        GitHub, VS Code, and secure web application projects.
+      </p>
 
-<nav>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
-</nav>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-secondary" href="https://github.com/ash-the-dev" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+      </div>
+    </section>
+  </header>
 
-<section id="about">
-<h2>About Me</h2>
-<p>
-I'm a cybersecurity engineering student focused on secure web development,
-infrastructure, and application security. I enjoy building web systems,
-learning how they break, and designing them to be more resilient.
-</p>
+  <main>
+    <section id="about" class="section">
+      <div class="section-heading">
+        <p class="section-label">About</p>
+        <h2>From websites to secure systems</h2>
+      </div>
 
-<p>
-My experience includes WordPress infrastructure, GitHub version control,
-web application development, and authentication systems.
-</p>
-</section>
+      <div class="about-grid">
+        <div class="card">
+          <p>
+            I'm Ash Morales, a cybersecurity engineering student with a growing
+            focus on secure web development, infrastructure, and practical
+            security-minded problem solving.
+          </p>
+          <p>
+            My background includes WordPress site management, GoDaddy hosting
+            and domain setup, GitHub workflows, VS Code development, and
+            building applications with authentication and structured data in
+            mind.
+          </p>
+        </div>
 
-<section id="projects">
-<h2>Projects</h2>
+        <div class="card">
+          <h3>What I bring</h3>
+          <ul class="bullet-list">
+            <li>Web development fundamentals</li>
+            <li>WordPress setup and customization</li>
+            <li>Hosting, domains, DNS, and deployment</li>
+            <li>Git and GitHub version control</li>
+            <li>Security-aware thinking in application design</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<div class="project">
-<h3>Secure Web Application</h3>
-<p>
-A web application project focused on authentication, structured data
-management, and secure development practices.
-</p>
-<a href="https://github.com/ash-the-dev">View on GitHub</a>
-</div>
+    <section id="projects" class="section alt-section">
+      <div class="section-heading">
+        <p class="section-label">Projects</p>
+        <h2>Work that reflects how I build</h2>
+      </div>
 
-<div class="project">
-<h3>WordPress Infrastructure & Security</h3>
-<p>
-Built and managed WordPress sites including hosting configuration,
-DNS management, and plugin security considerations.
-</p>
-</div>
+      <div class="projects-grid">
+        <article class="project-card">
+          <p class="project-tag">Application Security</p>
+          <h3>Secure Web Application</h3>
+          <p>
+            A web application project centered on authentication, structured
+            data handling, and secure development practices.
+          </p>
+          <a href="https://github.com/ash-the-dev" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </article>
 
-<div class="project">
-<h3>Cybersecurity Learning Lab</h3>
-<p>
-Hands-on practice exploring common vulnerabilities, secure coding
-practices, and system security concepts.
-</p>
-</div>
+        <article class="project-card">
+          <p class="project-tag">Web Systems</p>
+          <h3>WordPress Infrastructure & Security</h3>
+          <p>
+            Built and managed WordPress environments with attention to hosting,
+            plugins, domain setup, DNS, and site reliability.
+          </p>
+          <a href="#contact">Ask me about this work</a>
+        </article>
 
-</section>
+        <article class="project-card">
+          <p class="project-tag">Learning Lab</p>
+          <h3>Cybersecurity Practice Lab</h3>
+          <p>
+            Ongoing hands-on exploration of secure coding, vulnerability
+            awareness, and the foundations of modern application defense.
+          </p>
+          <a href="#skills">See relevant skills</a>
+        </article>
+      </div>
+    </section>
 
-<section id="skills">
-<h2>Skills</h2>
+    <section id="skills" class="section">
+      <div class="section-heading">
+        <p class="section-label">Skills</p>
+        <h2>Tools and technical strengths</h2>
+      </div>
 
-<ul>
-<li>HTML / CSS / JavaScript</li>
-<li>Git & GitHub</li>
-<li>WordPress Infrastructure</li>
-<li>GoDaddy Hosting & DNS</li>
-<li>Python • C# • C++ (basic)</li>
-<li>Secure Web Development</li>
-<li>Authentication Systems</li>
-</ul>
+      <div class="skills-grid">
+        <div class="card">
+          <h3>Development</h3>
+          <ul class="bullet-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>VS Code</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </div>
 
-</section>
+        <div class="card">
+          <h3>Web Platforms</h3>
+          <ul class="bullet-list">
+            <li>WordPress</li>
+            <li>GoDaddy hosting</li>
+            <li>Domains and DNS</li>
+            <li>Site setup and maintenance</li>
+            <li>Plugin and theme management</li>
+          </ul>
+        </div>
 
-<section id="contact">
-<h2>Contact</h2>
+        <div class="card">
+          <h3>Security Foundations</h3>
+          <ul class="bullet-list">
+            <li>Authentication systems</li>
+            <li>Structured data handling</li>
+            <li>Secure development mindset</li>
+            <li>Cybersecurity engineering coursework</li>
+            <li>Technical problem solving</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<p>Email: ash.morales0712@gmail.com</p>
+    <section id="contact" class="section alt-section">
+      <div class="section-heading">
+        <p class="section-label">Contact</p>
+        <h2>Let’s connect</h2>
+      </div>
 
-<p>GitHub:
-<a href="https://github.com/ash-the-dev">
-github.com/ash-the-dev
-</a>
-</p>
+      <div class="contact-card">
+        <p>
+          I’m building toward opportunities in secure web development,
+          application security, and technical roles where development and
+          security overlap.
+        </p>
+        <p><strong>Email:</strong> ash.morales0712@gmail.com</p>
+        <p>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/ash-the-dev" target="_blank" rel="noopener noreferrer">
+            github.com/ash-the-dev
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
 
-</section>
+  <footer class="site-footer">
+    <p>© 2026 Ash Morales. Built in VS Code and deployed with GitHub Pages.</p>
+  </footer>
 
-<footer>
-<p>© 2026 Ash Morales</p>
-</footer>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
