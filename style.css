@@ -231,3 +231,98 @@ a:hover {
     padding-top: 2rem;
   }
 }
+.github-card {
+  padding: 1.5rem;
+}
+
+.github-intro {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.github-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  min-width: 150px;
+}
+
+.stat-box h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.stat-box p {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.repo-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 1rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.repo-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(110, 231, 249, 0.45);
+}
+
+.repo-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.repo-item p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.85rem;
+}
+
+.repo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-image img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 0 35px rgba(56,189,248,0.45);
+}
