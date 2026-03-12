@@ -1,1 +1,12 @@
-console.log("Portfolio loaded successfully.");
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Ash portfolio loaded.");
+
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((item) => item.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+});
