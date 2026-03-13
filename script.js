@@ -8,6 +8,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
+  const html = document.documentElement;
+  const themeToggle = document.getElementById("theme-toggle");
+  const savedTheme = localStorage.getItem("portfolio-theme");
+
+  if (savedTheme) {
+    html.setAttribute("data-theme", savedTheme);
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = html.getAttribute("data-theme");
+      const newTheme = currentTheme === "green" ? "blue" : "green";
+      html.setAttribute("data-theme", newTheme);
+      localStorage.setItem("portfolio-theme", newTheme);
+    });
+  }
+
   const modal = document.getElementById("project-modal");
   const openModalBtn = document.getElementById("open-modal-btn");
   const closeModalBtn = document.getElementById("close-modal-btn");
@@ -61,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         "Website Design":
           "Hi Ash, I'm interested in a website design project. I'm looking for help with...",
         "Website Redesign":
-          "Hi Ash, I'm interested in redesigning an existing website. The main goals are...",
+          "Hi Ash, I'm interested in redesigning an existing website. The goals for the redesign are...",
         "SEO Improvements":
           "Hi Ash, I'm interested in improving a website's search visibility and structure. I'm looking for help with...",
         "Website Setup and Deployment":

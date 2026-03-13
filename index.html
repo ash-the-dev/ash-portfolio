@@ -1,51 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="green">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ash Morales | Secure Web Developer</title>
+  <title>Ash Morales | Web Design Portfolio</title>
   <meta
     name="description"
-    content="Portfolio of Ash Morales, focused on secure web development, infrastructure, deployment, and application security."
+    content="Ash Morales designs and builds modern websites with strong structure, performance, usability, and technical implementation."
   />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
   <header class="site-header">
     <nav class="nav">
       <div class="logo">Ash Morales</div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+          <span class="theme-dot theme-green"></span>
+          <span class="theme-dot theme-blue"></span>
+          <span class="theme-toggle-label">Theme</span>
+        </button>
       </div>
     </nav>
 
     <section class="hero">
       <div class="hero-text">
         <p class="eyebrow">Website Design, Structure, and Performance</p>
+
         <h1>Creating modern websites with strong structure, performance, and usability.</h1>
+
         <p class="hero-description">
-          I build well-structured websites designed for usability,
-          performance, and search visibility while keeping the
-          technical foundation clean and reliable.
+          I build well-structured websites designed for usability, performance,
+          and search visibility while keeping the technical foundation clean and reliable.
         </p>
 
         <div class="hero-buttons">
-            <a class="btn btn-primary" href="#projects">View Projects</a>
-            <button class="btn btn-secondary" id="open-modal-btn" type="button">
-        Start a Project
-        </button>
-         <a
-        class="btn btn-secondary"
-      href="https://github.com/ash-the-dev"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    GitHub
-  </a>
-</div>
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+
+          <button class="btn btn-primary" id="open-modal-btn" type="button">
+            Start a Project
+          </button>
+
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/ash-the-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
 
         <p class="hero-note">
           Currently completing a B.S. in Cybersecurity Engineering.
@@ -53,7 +69,8 @@
       </div>
 
       <div class="hero-image">
-<img src="images/ash.png" alt="Portrait of Ash Morales" />      </div>
+        <img src="images/ash.jpg" alt="Portrait of Ash Morales" />
+      </div>
     </section>
   </header>
 
@@ -61,33 +78,33 @@
     <section id="about" class="section">
       <div class="section-heading">
         <p class="section-label">About</p>
-        <h2>Technical work with structure behind it</h2>
+        <h2>Design with strong implementation behind it</h2>
       </div>
 
       <div class="about-grid">
         <div class="card">
           <p>
-          I’m Ash Morales. I design and build websites with an emphasis on
-          clarity, structure, and long-term usability. I enjoy creating web
-          experiences that are easy to navigate, well organized behind the
-          scenes, and built on reliable technical foundations.
+            I’m Ash Morales. I focus on designing and building websites that are
+            clear, visually engaging, and easy to use, while implementing the
+            technical structure behind the scenes that helps them perform well,
+            remain organized, and grow over time.
           </p>
           <p>
-          My experience includes designing and building websites, organizing
-          content and structure for clarity and usability, and implementing the
-          technical systems behind the scenes that support performance,
-          deployment, and long-term maintainability.
+            My experience includes designing and building websites, structuring
+            content for usability and search visibility, and supporting projects
+            with the technical systems needed for deployment, version control,
+            and ongoing maintenance.
           </p>
         </div>
 
         <div class="card">
-          <h3>What I do</h3>
+          <h3>What I bring</h3>
           <ul class="bullet-list">
-            <li>Build and maintain web applications</li>
-            <li>Set up and manage hosted websites</li>
-            <li>Configure domains, DNS, and deployment workflows</li>
-            <li>Organize code with Git and GitHub</li>
-            <li>Approach development with security in mind</li>
+            <li>Responsive website design</li>
+            <li>Clean layout and visual hierarchy</li>
+            <li>Search-friendly site structure</li>
+            <li>Deployment and site setup workflows</li>
+            <li>Technical implementation that supports long-term maintainability</li>
           </ul>
         </div>
       </div>
@@ -96,49 +113,75 @@
     <section id="projects" class="section alt-section">
       <div class="section-heading">
         <p class="section-label">Projects</p>
-        <h2>Work that reflects how I build</h2>
+        <h2>Selected work and website-focused builds</h2>
       </div>
 
       <div class="projects-grid">
-  <article class="project-card">
-    <p class="project-tag">Web Application</p>
-    <h3>Custom Web Application</h3>
-    <p>
-      A custom-built web application focused on clear structure,
-      authentication workflows, and organized data handling.
-      The project explores how thoughtful design and clean
-      implementation can support usability, performance,
-      and reliable site functionality.
-    </p>
-          <a
-            href="https://github.com/ash-the-dev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <article class="project-card">
+          <div class="project-preview browser-frame">
+            <div class="browser-top">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-body preview-one">
+              <div class="preview-nav"></div>
+              <div class="preview-hero"></div>
+              <div class="preview-lines"></div>
+            </div>
+          </div>
+
+          <p class="project-tag">Web Application</p>
+          <h3>Custom Web Application</h3>
+          <p>
+            A custom-built web application focused on clear structure,
+            authentication workflows, and organized data handling. The project
+            explores how thoughtful design and clean implementation can support
+            usability, performance, and reliable functionality.
+          </p>
+          <a href="https://github.com/ash-the-dev" target="_blank" rel="noopener noreferrer">
             View on GitHub
           </a>
         </article>
 
         <article class="project-card">
-          <p class="project-tag">Web Infrastructure</p>
-          <h3>Hosted Website Management</h3>
+          <div class="project-preview browser-frame">
+            <div class="browser-top">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-body preview-two">
+              <div class="preview-sidebar"></div>
+              <div class="preview-content-grid"></div>
+            </div>
+          </div>
+
+          <p class="project-tag">Website Design</p>
+          <h3>Business-Facing Website Design</h3>
           <p>
-            Experience supporting business-facing websites through hosting
-            configuration, site setup, domain connection, content updates, and
-            ongoing maintenance.
+            A website-focused build centered on layout, clarity, and usability,
+            supported by strong structure, content organization, and technical
+            setup that helps the site stay easy to manage over time.
           </p>
-          <a href="#skills">See related skills</a>
+          <a href="#contact">Ask about this work</a>
         </article>
 
         <article class="project-card">
-          <p class="project-tag">Security Practice</p>
-          <h3>Cybersecurity Lab Work</h3>
+          <div class="project-preview browser-frame">
+            <div class="browser-top">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-body preview-three">
+              <div class="preview-chart"></div>
+              <div class="preview-cards"></div>
+            </div>
+          </div>
+
+          <p class="project-tag">SEO & Structure</p>
+          <h3>Site Structure and Visibility</h3>
           <p>
-            Ongoing hands-on practice focused on secure coding, vulnerability
-            awareness, and understanding how modern systems can be strengthened
-            against common risks.
+            A project focused on improving structure, organization, and search
+            visibility through clearer content hierarchy, stronger page layout,
+            and the technical elements that support long-term website performance.
           </p>
-          <a href="#contact">Get in touch</a>
+          <a href="#skills">See related skills</a>
         </article>
       </div>
     </section>
@@ -146,40 +189,40 @@
     <section id="skills" class="section">
       <div class="section-heading">
         <p class="section-label">Skills</p>
-        <h2>Tools, systems, and technical strengths</h2>
+        <h2>Design, systems, and technical support</h2>
       </div>
 
       <div class="skills-grid">
         <div class="card">
-          <h3>Development</h3>
+          <h3>Website Design</h3>
+          <ul class="bullet-list">
+            <li>Responsive layouts</li>
+            <li>Visual hierarchy</li>
+            <li>User-focused structure</li>
+            <li>Clean interface design</li>
+            <li>Content organization</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Website Development</h3>
           <ul class="bullet-list">
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
-            <li>VS Code</li>
             <li>Git and GitHub</li>
+            <li>Version-controlled workflows</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Web Systems</h3>
+          <h3>Technical Foundations</h3>
           <ul class="bullet-list">
-            <li>Website setup and maintenance</li>
-            <li>Hosting and deployment workflows</li>
+            <li>Website setup and deployment</li>
             <li>Domain and DNS configuration</li>
-            <li>Content management and site updates</li>
-            <li>Plugin, theme, and platform administration</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Security Focus</h3>
-          <ul class="bullet-list">
-            <li>Authentication systems</li>
-            <li>Structured data handling</li>
-            <li>Secure development mindset</li>
-            <li>Technical troubleshooting</li>
-            <li>Risk-aware system thinking</li>
+            <li>Search-friendly structure</li>
+            <li>Performance-minded implementation</li>
+            <li>Security-aware development practices</li>
           </ul>
         </div>
       </div>
@@ -188,12 +231,12 @@
     <section id="github" class="section alt-section">
       <div class="section-heading">
         <p class="section-label">GitHub</p>
-        <h2>Recent work and repositories</h2>
+        <h2>Recent repositories and activity</h2>
       </div>
 
       <div class="card github-card">
         <p class="github-intro">
-          A snapshot of my public GitHub activity and featured repositories.
+          A snapshot of public repositories and recent work.
         </p>
 
         <div id="github-stats" class="github-stats">
@@ -207,23 +250,18 @@
     <section id="contact" class="section">
       <div class="section-heading">
         <p class="section-label">Contact</p>
-        <h2>Let’s connect</h2>
+        <h2>Let’s build something thoughtful</h2>
       </div>
 
       <div class="contact-card">
         <p>
-          I’m interested in opportunities involving secure web development,
-          application security, infrastructure support, and technical roles
-          where development and security overlap.
+          I’m interested in website design, redesign, SEO-focused improvements,
+          and projects that benefit from both visual clarity and strong technical implementation.
         </p>
         <p><strong>Email:</strong> ash.morales0712@gmail.com</p>
         <p>
           <strong>GitHub:</strong>
-          <a
-            href="https://github.com/ash-the-dev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://github.com/ash-the-dev" target="_blank" rel="noopener noreferrer">
             github.com/ash-the-dev
           </a>
         </p>
@@ -236,63 +274,63 @@
   </footer>
 
   <div class="modal-overlay" id="project-modal" aria-hidden="true">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close" id="close-modal-btn" aria-label="Close modal">&times;</button>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="close-modal-btn" aria-label="Close modal">&times;</button>
 
-    <p class="section-label">Start a Project</p>
-    <h2 id="modal-title">What are you interested in?</h2>
-    <p class="modal-intro">
-      Select a service to begin, then tell me a little about what you're looking for.
-    </p>
+      <p class="section-label">Start a Project</p>
+      <h2 id="modal-title">What are you interested in?</h2>
+      <p class="modal-intro">
+        Choose a starting point, then tell me a little about the project.
+      </p>
 
-    <div class="service-options">
-      <button type="button" class="service-card" data-service="Website Design">
-        <span>Website Design</span>
-      </button>
+      <div class="service-options">
+        <button type="button" class="service-card" data-service="Website Design">
+          <span>Website Design</span>
+        </button>
 
-      <button type="button" class="service-card" data-service="Website Redesign">
-        <span>Website Redesign</span>
-      </button>
+        <button type="button" class="service-card" data-service="Website Redesign">
+          <span>Website Redesign</span>
+        </button>
 
-      <button type="button" class="service-card" data-service="SEO Improvements">
-        <span>SEO Improvements</span>
-      </button>
+        <button type="button" class="service-card" data-service="SEO Improvements">
+          <span>SEO Improvements</span>
+        </button>
 
-      <button type="button" class="service-card" data-service="Website Setup and Deployment">
-        <span>Website Setup & Deployment</span>
-      </button>
+        <button type="button" class="service-card" data-service="Website Setup and Deployment">
+          <span>Website Setup & Deployment</span>
+        </button>
 
-      <button type="button" class="service-card" data-service="Technical Consultation">
-        <span>Technical Consultation</span>
-      </button>
+        <button type="button" class="service-card" data-service="Technical Consultation">
+          <span>Technical Consultation</span>
+        </button>
+      </div>
+
+      <form
+        class="project-form"
+        action="https://formspree.io/f/mgonyrdp"
+        method="POST"
+      >
+        <input type="hidden" name="selected_service" id="selected-service-input" value="" />
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+        <label for="message">Project Details</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          placeholder="Tell me about your project..."
+          required
+        ></textarea>
+
+        <button type="submit" class="btn btn-primary">Send Inquiry</button>
+      </form>
     </div>
-
-    <form
-      class="project-form"
-      action="https://formspree.io/f/YOUR_FORM_ID"
-      method="POST"
-    >
-      <input type="hidden" name="selected_service" id="selected-service-input" value="" />
-
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Your name" required />
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required />
-
-      <label for="message">Project Details</label>
-      <textarea
-        id="message"
-        name="message"
-        rows="6"
-        placeholder="Tell me about your project..."
-        required
-      ></textarea>
-
-      <button type="submit" class="btn btn-primary">Send Inquiry</button>
-    </form>
   </div>
-</div>
 
   <script src="script.js"></script>
 </body>
