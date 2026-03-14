@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="green">
+<html lang="en" data-theme="studio">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +17,10 @@
 
   <header class="site-header">
     <nav class="nav">
-      <div class="logo">Ash Morales</div>
+      <a href="#" class="logo">
+        <img src="images/ash.png" alt="Ash Morales portrait" class="nav-avatar" />
+        <span>Ash Morales</span>
+      </a>
 
       <div class="nav-right">
         <div class="nav-links">
@@ -27,11 +30,15 @@
           <a href="#contact">Contact</a>
         </div>
 
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
-          <span class="theme-dot theme-green"></span>
-          <span class="theme-dot theme-blue"></span>
-          <span class="theme-toggle-label">Theme</span>
-        </button>
+        <div class="layout-switcher">
+          <span class="layout-switcher-label">Try different layout styles</span>
+          <div class="layout-buttons" id="layout-buttons">
+            <button class="layout-btn active" type="button" data-theme="studio">Studio</button>
+            <button class="layout-btn" type="button" data-theme="canvas">Canvas</button>
+            <button class="layout-btn" type="button" data-theme="developer">Developer</button>
+            <button class="layout-btn" type="button" data-theme="cyber">Cyber</button>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -66,10 +73,6 @@
         <p class="hero-note">
           Currently completing a B.S. in Cybersecurity Engineering.
         </p>
-      </div>
-
-      <div class="hero-image">
-        <img src="images/ash.png" alt="Portrait of Ash Morales" />
       </div>
     </section>
   </header>
@@ -341,6 +344,7 @@
       >
         <input type="hidden" name="selected_service" id="selected-service-input" value="" />
         <input type="hidden" name="_next" value="https://ashthedev.com/thank-you.html" />
+
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your name" required />
 

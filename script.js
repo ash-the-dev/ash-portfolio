@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  const html = document.documentElement;
   const navLinks = document.querySelectorAll(".nav-links a");
 
+  // ----------------------------
+  // Nav active state
+  // ----------------------------
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       navLinks.forEach((item) => item.classList.remove("active"));
@@ -8,23 +12,35 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
-  const html = document.documentElement;
-  const themeToggle = document.getElementById("theme-toggle");
-  const savedTheme = localStorage.getItem("portfolio-theme");
+  // ----------------------------
+  // 4-mode layout switcher (button version)
+  // ----------------------------
+  const layoutButtons = document.querySelectorAll(".layout-btn");
+  const savedTheme = localStorage.getItem("portfolio-theme") || "studio";
 
-  if (savedTheme) {
-    html.setAttribute("data-theme", savedTheme);
-  }
+  html.setAttribute("data-theme", savedTheme);
 
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const currentTheme = html.getAttribute("data-theme");
-      const newTheme = currentTheme === "green" ? "blue" : "green";
+  layoutButtons.forEach((button) => {
+    if (button.dataset.theme === savedTheme) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+
+    button.addEventListener("click", () => {
+      const newTheme = button.dataset.theme;
+
       html.setAttribute("data-theme", newTheme);
       localStorage.setItem("portfolio-theme", newTheme);
-    });
-  }
 
+      layoutButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+    });
+  });
+
+  // ----------------------------
+  // Project modal
+  // ----------------------------
   const modal = document.getElementById("project-modal");
   const openModalBtn = document.getElementById("open-modal-btn");
   const closeModalBtn = document.getElementById("close-modal-btn");
@@ -33,12 +49,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   const selectedServiceInput = document.getElementById("selected-service-input");
 
   function openModal() {
+    if (!modal) return;
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
   }
 
   function closeModal() {
+    if (!modal) return;
     modal.classList.remove("active");
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
@@ -61,18 +79,24 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal.classList.contains("active")) {
+    if (event.key === "Escape" && modal && modal.classList.contains("active")) {
       closeModal();
     }
   });
 
+  // ----------------------------
+  // Service selection autofill
+  // ----------------------------
   serviceCards.forEach((card) => {
     card.addEventListener("click", () => {
       serviceCards.forEach((item) => item.classList.remove("active"));
       card.classList.add("active");
 
-      const selectedService = card.dataset.service;
-      selectedServiceInput.value = selectedService;
+      const selectedService = card.dataset.service || "";
+
+      if (selectedServiceInput) {
+        selectedServiceInput.value = selectedService;
+      }
 
       const templates = {
         "Website Design":
@@ -88,19 +112,31 @@ document.addEventListener("DOMContentLoaded", async () => {
       };
 
       if (messageField) {
-        messageField.value = templates[selectedService] || "Hi Ash, I'm interested in working together on...";
+        messageField.value =
+          templates[selectedService] ||
+          "Hi Ash, I'm interested in working together on a project.";
         messageField.focus();
       }
     });
   });
 
+  // ----------------------------
+  // GitHub repo section
+  // ----------------------------
   const username = "ash-the-dev";
   const statsContainer = document.getElementById("github-stats");
   const repoList = document.getElementById("repo-list");
 
   if (statsContainer && repoList) {
     try {
-      const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+      const response = await fetch(
+        `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`
+      );
+
+      if (!response.ok) {
+        throw new Error("GitHub API request failed.");
+      }
+
       const repos = await response.json();
 
       if (!Array.isArray(repos)) {
