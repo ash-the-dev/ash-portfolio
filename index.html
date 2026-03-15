@@ -320,63 +320,105 @@
     <p>© 2026 Ash Morales. Built in VS Code and deployed with GitHub Pages.</p>
   </footer>
 
-  <div class="modal-overlay" id="project-modal" aria-hidden="true">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" id="close-modal-btn" aria-label="Close modal">&times;</button>
+ <div class="modal-overlay" id="project-modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="close-modal-btn" aria-label="Close modal">&times;</button>
 
-      <p class="section-label">Start a Project</p>
-      <h2 id="modal-title">What are you interested in?</h2>
-      <p class="modal-intro">
-        Choose a starting point, then tell me a little about the project.
-      </p>
+    <p class="section-label">Start a Project</p>
+    <h2 id="modal-title">What are you interested in?</h2>
+    <p class="modal-intro">
+      Choose a starting point, then tell me a little about the project.
+    </p>
 
-      <div class="service-options">
-        <button type="button" class="service-card" data-service="Website Design">
-          <span>Website Design</span>
-        </button>
+    <div class="service-options">
+      <button type="button" class="service-card" data-service="Website Design">
+        <span>Website Design</span>
+      </button>
 
-        <button type="button" class="service-card" data-service="Website Redesign">
-          <span>Website Redesign</span>
-        </button>
+      <button type="button" class="service-card" data-service="Website Redesign">
+        <span>Website Redesign</span>
+      </button>
 
-        <button type="button" class="service-card" data-service="SEO Improvements">
-          <span>SEO Improvements</span>
-        </button>
+      <button type="button" class="service-card" data-service="SEO Improvements">
+        <span>SEO Improvements</span>
+      </button>
 
-        <button type="button" class="service-card" data-service="Website Setup and Deployment">
-          <span>Website Setup &amp; Deployment</span>
-        </button>
+      <button type="button" class="service-card" data-service="Website Setup and Deployment">
+        <span>Website Setup &amp; Deployment</span>
+      </button>
 
-        <button type="button" class="service-card" data-service="Technical Consultation">
-          <span>Technical Consultation</span>
-        </button>
-      </div>
+      <button type="button" class="service-card" data-service="Technical Consultation">
+        <span>Technical Consultation</span>
+      </button>
+    </div>
 
-      <form
-        class="project-form"
-        action="https://formspree.io/f/mgonyrdp"
-        method="POST"
-      >
-        <input type="hidden" name="selected_service" id="selected-service-input" value="" />
-        <input type="hidden" name="_next" value="https://ashthedev.com/thank-you.html" />
+    <form
+      class="project-form"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+    >
+      <input
+        type="hidden"
+        name="access_key"
+        value="3b1c92e6-6090-4e21-a71a-caad86269790"
+      />
+      <input
+        type="hidden"
+        name="subject"
+        value="New Portfolio Project Inquiry"
+      />
+      <input
+        type="hidden"
+        name="from_name"
+        value="Ash Morales Portfolio"
+      />
+      <input
+        type="hidden"
+        name="selected_service"
+        id="selected-service-input"
+        value=""
+      />
+      <input
+        type="checkbox"
+        name="botcheck"
+        style="display: none;"
+        tabindex="-1"
+        autocomplete="off"
+      />
 
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required />
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your name"
+        required
+      />
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+      />
 
-        <label for="message">Project Details</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="6"
-          placeholder="Tell me about your project..."
-          required
-        ></textarea>
+      <label for="message">Project Details</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="6"
+        placeholder="Hi Ash, I’m interested in a website design project. I’m looking for help with..."
+        required
+      ></textarea>
 
-        <button type="submit" class="btn btn-primary">Send Inquiry</button>
-      </form>
+      <button type="submit" class="btn btn-primary">Send Inquiry</button>
+    </form>
+  </div>
+</div>
+
+
     </div>
   </div>
 
