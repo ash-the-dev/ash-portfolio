@@ -1,68 +1,101 @@
 :root {
-  --bg: #f6f2eb;
-  --bg-alt: #ece4d8;
-  --panel: rgba(255, 255, 255, 0.78);
-  --panel-border: rgba(30, 30, 30, 0.08);
-  --text: #1f2430;
-  --muted: #5f6676;
-  --accent: #5b5cf0;
-  --accent-strong: #4344cf;
-  --accent-rgb: 91, 92, 240;
+  /* Default theme = cyber */
+
+  /* background system */
+  --bg: #07090f;
+  --bg-alt: #10141d;
+
+  /* glass panels with subtle white presence */
+  --panel: rgba(255, 255, 255, 0.08);
+  --panel-border: rgba(255, 255, 255, 0.18);
+
+  /* typography */
+  --text: #f5f7ff;
+  --muted: #c7cfdd;
+
+  /* neon cyber green */
+  --accent: #39ff14;
+
+  /* softer highlight green */
+  --accent-strong: #b8fff1;
+
+  /* rgb version for glows */
+  --accent-rgb: 57, 255, 20;
+
+  /* layout */
   --max-width: 1160px;
   --radius: 20px;
-  --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+
+  /* deeper shadow for dark UI */
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
 }
 
 html[data-theme="studio"] {
-  --bg: #f6f2eb;
-  --bg-alt: #ece4d8;
-  --panel: rgba(255, 255, 255, 0.78);
-  --panel-border: rgba(30, 30, 30, 0.08);
-  --text: #1f2430;
-  --muted: #5f6676;
-  --accent: #5b5cf0;
-  --accent-strong: #4344cf;
-  --accent-rgb: 91, 92, 240;
-  --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  --bg: #f5f5f5;
+  --bg-alt: #e8e8e8;
+  --panel: rgba(255, 255, 255, 0.9);
+  --panel-border: rgba(0, 0, 0, 0.1);
+  --text: #111111;
+  --muted: #5c5c5c;
+  --accent: #000000;
+  --accent-strong: #2b2b2b;
+  --accent-rgb: 0, 0, 0;
+  --shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
 }
 
 html[data-theme="canvas"] {
-  --bg: #fff8ef;
-  --bg-alt: #f4eadb;
-  --panel: rgba(255, 255, 255, 0.86);
-  --panel-border: rgba(114, 84, 53, 0.12);
-  --text: #2b2118;
-  --muted: #6f6254;
-  --accent: #e6783d;
-  --accent-strong: #c85620;
-  --accent-rgb: 230, 120, 61;
+  --bg: #fdf8f1;
+  --bg-alt: #f3eadf;
+  --panel: rgba(255, 255, 255, 0.88);
+  --panel-border: rgba(191, 87, 0, 0.14);
+  --text: #2e2218;
+  --muted: #705f4f;
+  --accent: #bf5700; /* Texas Longhorns orange */
+  --accent-strong: #8f3f00;
+  --accent-rgb: 191, 87, 0;
   --shadow: 0 18px 40px rgba(120, 84, 42, 0.1);
 }
 
 html[data-theme="developer"] {
-  --bg: #08111f;
-  --bg-alt: #101a2d;
-  --panel: rgba(255, 255, 255, 0.06);
+  --bg: #07111f;
+  --bg-alt: #10203a;
+  --panel: rgba(255, 255, 255, 0.07);
   --panel-border: rgba(255, 255, 255, 0.12);
-  --text: #e8eeff;
+  --text: #edf3ff;
   --muted: #a8b5d1;
-  --accent: #6ee7f9;
-  --accent-strong: #38bdf8;
-  --accent-rgb: 56, 189, 248;
+  --accent: #7cc7ff;
+  --accent-strong: #2b6fff;
+  --accent-rgb: 124, 199, 255;
   --shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
 }
 
 html[data-theme="cyber"] {
-  --bg: #05070b;
-  --bg-alt: #0b1018;
-  --panel: rgba(255, 255, 255, 0.05);
-  --panel-border: rgba(255, 255, 255, 0.11);
-  --text: #edf2ff;
-  --muted: #b5c0d8;
-  --accent: #4ade80;
-  --accent-strong: #22c55e;
-  --accent-rgb: 34, 197, 94;
-  --shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
+  --bg: #020304;
+  --bg-alt: #0a0f14;
+
+  /* slightly frosted panels so white appears */
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-border: rgba(255, 255, 255, 0.14);
+
+  /* readable white text */
+  --text: #f8fafc;
+  --muted: #a3b0c2;
+
+  /* bright neon green accents */
+  --accent: #39ff14;
+  --accent-strong: #16c60c;
+  --accent-rgb: 57, 255, 20;
+
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.cyber-glow {
+  box-shadow: 0 0 8px rgba(57,255,20,0.6),
+              0 0 18px rgba(57,255,20,0.4);
+}
+
+a:hover {
+  text-shadow: 0 0 6px rgba(57,255,20,0.7);
 }
 
 * {
