@@ -586,6 +586,16 @@
     </button>
   </div>
 
+  <!-- Vercel Web Analytics (same as @vercel/analytics/next on Next.js; enable Analytics in the Vercel project dashboard) -->
+  <script>
+    window.va =
+      window.va ||
+      function () {
+        (window.vaq = window.vaq || []).push(arguments);
+      };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
   <script src="vine-trail.js"></script>
   <script src="script.js"></script>
 </body>
