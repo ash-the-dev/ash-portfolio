@@ -2,9 +2,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const html = document.documentElement;
   const navLinks = document.querySelectorAll(".nav-links a");
 
-  // ----------------------------
-  // Nav active state
-  // ----------------------------
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       navLinks.forEach((item) => item.classList.remove("active"));
@@ -12,13 +9,82 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
-  // ----------------------------
-  // 4-mode layout switcher (button version)
-  // ----------------------------
   const layoutButtons = document.querySelectorAll(".layout-btn");
-  const savedTheme = localStorage.getItem("portfolio-theme") || "studio";
+  const savedTheme = localStorage.getItem("portfolio-theme") || "canvas";
 
   html.setAttribute("data-theme", savedTheme);
+
+  let vineTrailDestroy = null;
+
+  function syncVineTrail() {
+    if (typeof window.VineTrail === "undefined") return;
+    if (vineTrailDestroy) {
+      vineTrailDestroy();
+      vineTrailDestroy = null;
+    }
+    if (html.getAttribute("data-theme") === "canvas") {
+      const vineCanvas = document.getElementById("vine-trail");
+      if (vineCanvas) {
+        vineTrailDestroy = window.VineTrail.init(vineCanvas);
+      }
+    }
+  }
+
+  const bgGrid = document.getElementById("bg-grid");
+  const cyberGridPull = document.getElementById("cyber-grid-pull");
+  let cyberRaf = null;
+  let cyberSmoothX = window.innerWidth * 0.5;
+  let cyberSmoothY = window.innerHeight * 0.5;
+
+  function applyCyberPointer(clientX, clientY) {
+    cyberSmoothX += (clientX - cyberSmoothX) * 0.14;
+    cyberSmoothY += (clientY - cyberSmoothY) * 0.14;
+    html.style.setProperty("--cyber-mx", `${cyberSmoothX}px`);
+    html.style.setProperty("--cyber-my", `${cyberSmoothY}px`);
+    if (bgGrid) {
+      bgGrid.style.backgroundPosition = `${cyberSmoothX * 0.018}px ${cyberSmoothY * 0.018}px`;
+    }
+    if (cyberGridPull) {
+      cyberGridPull.style.backgroundPosition = `${-cyberSmoothX * 0.014}px ${-cyberSmoothY * 0.014}px`;
+    }
+  }
+
+  function onCyberPointerMove(event) {
+    if (cyberRaf !== null) return;
+    cyberRaf = requestAnimationFrame(() => {
+      cyberRaf = null;
+      if (html.getAttribute("data-theme") !== "cyber") return;
+      applyCyberPointer(event.clientX, event.clientY);
+    });
+  }
+
+  function detachCyberGridTracking() {
+    document.removeEventListener("mousemove", onCyberPointerMove);
+    if (cyberRaf !== null) {
+      cancelAnimationFrame(cyberRaf);
+      cyberRaf = null;
+    }
+    html.style.removeProperty("--cyber-mx");
+    html.style.removeProperty("--cyber-my");
+    if (bgGrid) bgGrid.style.removeProperty("background-position");
+    if (cyberGridPull) cyberGridPull.style.removeProperty("background-position");
+  }
+
+  function attachCyberGridTracking() {
+    detachCyberGridTracking();
+    cyberSmoothX = window.innerWidth * 0.5;
+    cyberSmoothY = window.innerHeight * 0.5;
+    applyCyberPointer(cyberSmoothX, cyberSmoothY);
+    document.addEventListener("mousemove", onCyberPointerMove, { passive: true });
+  }
+
+  function syncCyberGrid() {
+    if (html.getAttribute("data-theme") === "cyber") {
+      attachCyberGridTracking();
+    } else {
+      detachCyberGridTracking();
+    }
+  }
 
   layoutButtons.forEach((button) => {
     if (button.dataset.theme === savedTheme) {
@@ -29,18 +95,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     button.addEventListener("click", () => {
       const newTheme = button.dataset.theme;
-
       html.setAttribute("data-theme", newTheme);
       localStorage.setItem("portfolio-theme", newTheme);
-
       layoutButtons.forEach((btn) => btn.classList.remove("active"));
       button.classList.add("active");
+      syncVineTrail();
+      syncCyberGrid();
     });
   });
 
-  // ----------------------------
-  // Project modal
-  // ----------------------------
+  syncVineTrail();
+  syncCyberGrid();
+
   const modal = document.getElementById("project-modal");
   const openModalBtn = document.getElementById("open-modal-btn");
   const closeModalBtn = document.getElementById("close-modal-btn");
@@ -78,15 +144,65 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
+  const devWidget = document.getElementById("dev-widget");
+  const devToggle = document.getElementById("dev-widget-toggle");
+  const devPanel = document.getElementById("dev-widget-panel");
+  const devPanelClose = document.getElementById("dev-widget-panel-close");
+  const devOpenModalBtn = document.getElementById("dev-widget-open-modal");
+
+  function closeDevWidget() {
+    if (!devWidget || !devPanel || !devToggle) return;
+    devWidget.classList.remove("dev-widget--open");
+    devToggle.setAttribute("aria-expanded", "false");
+    devPanel.setAttribute("hidden", "");
+  }
+
+  function openDevWidget() {
+    if (!devWidget || !devPanel || !devToggle) return;
+    devWidget.classList.add("dev-widget--open");
+    devToggle.setAttribute("aria-expanded", "true");
+    devPanel.removeAttribute("hidden");
+  }
+
+  function toggleDevWidget() {
+    if (devWidget?.classList.contains("dev-widget--open")) {
+      closeDevWidget();
+    } else {
+      openDevWidget();
+    }
+  }
+
+  devToggle?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleDevWidget();
+  });
+
+  devPanelClose?.addEventListener("click", () => {
+    closeDevWidget();
+  });
+
+  devOpenModalBtn?.addEventListener("click", () => {
+    closeDevWidget();
+    openModal();
+  });
+
+  document.addEventListener("mousedown", (event) => {
+    if (!devWidget?.classList.contains("dev-widget--open")) return;
+    if (event.target.closest(".dev-widget")) return;
+    closeDevWidget();
+  });
+
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal && modal.classList.contains("active")) {
+    if (event.key !== "Escape") return;
+    if (modal && modal.classList.contains("active")) {
       closeModal();
+      return;
+    }
+    if (devWidget?.classList.contains("dev-widget--open")) {
+      closeDevWidget();
     }
   });
 
-  // ----------------------------
-  // Service selection autofill
-  // ----------------------------
   serviceCards.forEach((card) => {
     card.addEventListener("click", () => {
       serviceCards.forEach((item) => item.classList.remove("active"));
@@ -120,9 +236,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
-  // ----------------------------
-  // GitHub repo section
-  // ----------------------------
   const username = "ash-the-dev";
   const statsContainer = document.getElementById("github-stats");
   const repoList = document.getElementById("repo-list");

@@ -1,41 +1,73 @@
 <!DOCTYPE html>
-<html data-theme="cyber">
+<html data-theme="canvas">
 <head>
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Ash Morales | Web Design Portfolio" />
+  <meta property="og:title" content="Ash the Dev | Portfolio" />
   <meta property="og:description" content="Frontend Developer & Web Designer" />
-  <meta property="og:image" content="https://ashthedev.com/images/og-image3.png" />
+  <meta property="og:image" content="https://ashthedev.com/images/og-image1.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Ash the Dev — web design and development" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://ashthedev.com/images/og-image1.png" />
   <meta property="og:url" content="https://ashthedev.com" />
   <meta property="og:type" content="website" />
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ash Morales | Web Design Portfolio</title>
+  <title>Ash the Dev | Portfolio</title>
   <meta
     name="description"
-    content="Ash Morales designs and builds modern websites with strong structure, performance, usability, and technical implementation."
+    content="Ash the Dev designs and builds modern websites with strong structure, performance, usability, and technical implementation."
   />
+  <link rel="icon" type="image/png" href="images/ash.png" />
+  <link rel="apple-touch-icon" href="images/ash.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <div class="bg-orb orb-1"></div>
   <div class="bg-orb orb-2"></div>
-  <div class="bg-grid"></div>
+  <div class="bg-roses" aria-hidden="true"></div>
+  <div class="bg-grid" id="bg-grid"></div>
+  <div class="cyber-grid-pull" id="cyber-grid-pull" aria-hidden="true"></div>
+  <div class="cyber-cursor-glow" aria-hidden="true"></div>
+  <div class="cyber-scanlines" aria-hidden="true"></div>
+  <div class="cyber-hud-frame" aria-hidden="true"></div>
+
+  <canvas id="vine-trail" aria-hidden="true"></canvas>
+  <div class="canvas-magic-dust" aria-hidden="true"></div>
+  <div class="canvas-sweep" aria-hidden="true"></div>
 
   <header class="site-header">
     <nav class="nav">
       <a href="#" class="logo">
-        <img src="images/ash.png" alt="Ash Morales portrait" class="nav-avatar" />
-        <span>Ash Morales</span>
+        <span class="nav-avatar-frame">
+          <span class="nav-avatar-photo-wrap">
+            <img src="images/ash.png" alt="Ash the Dev portrait" class="nav-avatar" width="192" height="214" decoding="async" />
+          </span>
+          <img
+            src="images/CircleFrame.png"
+            alt=""
+            class="nav-avatar-wreath"
+            width="192"
+            height="214"
+            decoding="async"
+            aria-hidden="true"
+          />
+        </span>
+        <span class="logo-name">
+          <span class="logo-name-part">Ash</span> <span class="logo-name-part logo-name-part--soft">the</span>
+          <span class="logo-name-part">Dev</span>
+        </span>
       </a>
 
       <div class="nav-right">
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
+          <a href="#operations">Operations</a>
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
         </div>
@@ -43,10 +75,10 @@
         <div class="layout-switcher">
           <span class="layout-switcher-label">Try different layout styles</span>
           <div class="layout-buttons" id="layout-buttons">
-            <button class="layout-btn active" type="button" data-theme="studio">Studio</button>
-            <button class="layout-btn" type="button" data-theme="canvas">Canvas</button>
-            <button class="layout-btn" type="button" data-theme="developer">Developer</button>
-            <button class="layout-btn" type="button" data-theme="cyber">Cyber</button>
+            <button class="layout-btn" type="button" data-theme="studio"><span>Studio</span></button>
+            <button class="layout-btn" type="button" data-theme="cyber"><span>Cyber</span></button>
+            <button class="layout-btn active" type="button" data-theme="canvas"><span>Custom</span></button>
+            <button class="layout-btn" type="button" data-theme="developer"><span>Developer</span></button>
           </div>
         </div>
       </div>
@@ -97,7 +129,7 @@
       <div class="about-grid">
         <div class="card">
           <p>
-            I’m Ash Morales. I focus on designing and building websites that are
+            I’m Ash Morales — I build and share work as <strong>Ash the Dev</strong>. I focus on designing and building websites that are
             clear, visually engaging, and easy to use, while implementing the
             technical structure behind the scenes that helps them perform well,
             remain organized, and grow over time.
@@ -137,8 +169,8 @@
             </div>
             <div class="browser-body">
               <img
-                src="images/securemebuddy-preview.png"
-                alt="SecureMeBuddy website preview"
+                src="images/Screenshot%202026-04-15%20195801.png"
+                alt="SecureMeBuddy home page with hero and primary calls to action"
                 class="project-image"
               />
             </div>
@@ -147,13 +179,31 @@
           <p class="project-tag">Full-Stack Website Development</p>
           <h3>SecureMeBuddy</h3>
           <p>
-            SecureMeBuddy is a full-stack web application designed to help users
-            strengthen their online security through clear guidance, structured
-            learning resources, and practical security tools. The project involved
-            developing the front-end interface, integrating external APIs and
-            security tools, implementing a Supabase-backed database, and building
-            backend monitoring to support content management and system visibility.
+            A full-stack product for safer online habits: guided tools, learning paths,
+            and community threat reporting. I built the public experience end to end,
+            wired external checks and APIs, and backed it with Supabase plus an
+            operations console for admins to monitor usage, health, and change history.
           </p>
+
+          <div class="project-gallery project-gallery--two">
+            <figure class="project-shot">
+              <img
+                src="images/Screenshot%202026-04-15%20200149.png"
+                alt="SecureMeBuddy Tools page"
+                loading="lazy"
+              />
+              <figcaption>Tools hub with responsive cards for guided safety checks.</figcaption>
+            </figure>
+            <figure class="project-shot">
+              <img
+                src="images/Screenshot%202026-04-15%202000199.png"
+                alt="SecureMeBuddy sign-in"
+                loading="lazy"
+              />
+              <figcaption>Account entry with split layout and tabbed sign-in / sign-up.</figcaption>
+            </figure>
+          </div>
+
           <a href="https://securemebuddy.com" target="_blank" rel="noopener noreferrer">
             Visit Website
           </a>
@@ -174,10 +224,9 @@
           <p class="project-tag">Web Application</p>
           <h3>Custom Web Application</h3>
           <p>
-            A custom-built web application focused on clear structure,
-            authentication workflows, and organized data handling. The project
-            explores how thoughtful design and clean implementation can support
-            usability, performance, and reliable functionality.
+            A structured app-style build focused on auth flows, clear screen hierarchy,
+            and predictable client-side behavior—useful when the production repo stays
+            private but you still want to show how I approach product screens.
           </p>
           <a href="https://github.com/ash-the-dev" target="_blank" rel="noopener noreferrer">
             View on GitHub
@@ -191,8 +240,8 @@
             </div>
             <div class="browser-body">
               <img
-                src="images/ASI-Example.png"
-                alt="All Stainless Installations commercial business website example"
+                src="images/Screenshot%202026-04-15%20201433337.png"
+                alt="Commercial fabrication company website hero"
                 class="project-image"
               />
             </div>
@@ -201,12 +250,9 @@
           <p class="project-tag">Website Design &amp; Optimization</p>
           <h3>Commercial Business Website</h3>
           <p>
-            End-to-end website design and development for a commercial fabrication
-            company. This project focused on responsive layout design, content
-            hierarchy, performance tuning, SEO setup, search indexing, and lead
-            capture integration. The final result was a polished business-facing
-            website built to present services clearly, support discoverability in
-            search, and make it easier for potential clients to get in touch.
+            End-to-end site for a fabrication company: responsive layout, strong
+            visuals for real projects, performance and SEO basics, and a quote flow
+            so leads arrive with enough detail to respond quickly.
           </p>
           <a href="#contact">Ask about this work</a>
         </article>
@@ -225,12 +271,80 @@
           <p class="project-tag">SEO &amp; Structure</p>
           <h3>Site Structure and Visibility</h3>
           <p>
-            A project focused on improving structure, organization, and search
-            visibility through clearer content hierarchy, stronger page layout,
-            and the technical elements that support long-term website performance.
+            Work centered on clearer page hierarchy, internal linking, and the small
+            technical details that help a site stay understandable to people and search
+            engines over time.
           </p>
           <a href="#skills">See related skills</a>
         </article>
+      </div>
+    </section>
+
+    <section id="operations" class="section operations-console">
+      <div class="section-heading">
+        <p class="section-label">SecureMeBuddy · Admin</p>
+        <h2>Operations console for monitoring tools and traffic</h2>
+        <p class="section-lead">
+          A separate admin experience for SecureMeBuddy: dark UI, Supabase-backed
+          telemetry, and views that make tool health, risk, and audit history easy to scan.
+        </p>
+      </div>
+
+      <div class="operations-layout">
+        <div class="card operations-intro">
+          <p>
+            Navigation groups <strong>Overview</strong>, <strong>Intelligence Center</strong>,
+            <strong>System health</strong>, <strong>Lookups</strong>, <strong>Signal triage</strong>,
+            and utilities (<strong>API keys</strong>, <strong>Affiliates</strong>, <strong>Change log</strong>),
+            with paths back to the public app and global alerts in the header.
+          </p>
+          <p>
+            <strong>Overview</strong> summarizes lookups, risk levels, tool success rates,
+            latency, signups, sessions, and shortcuts into trends. <strong>Intelligence Center</strong>
+            breaks down tool events by time window, outcome mix, provider volume,
+            and latency. <strong>System health</strong> turns that into per-integration cards with
+            status labels for quick triage.
+          </p>
+          <p>
+            <strong>Signal triage</strong> uses a Kanban-style board with filters so open
+            signals stay visible; <strong>Change log</strong> is a filterable audit table with
+            severity, actor, linked entities, and resolution actions when you need a paper trail.
+          </p>
+        </div>
+
+        <div class="operations-visual">
+          <div class="project-preview browser-frame">
+            <div class="browser-top">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-body browser-body--dashboard">
+              <img
+                src="images/Screenshot%202026-04-18%20120051.png"
+                alt="Operations console overview with KPI cards and charts"
+                class="project-image"
+              />
+            </div>
+          </div>
+
+          <div class="project-gallery project-gallery--two operations-gallery">
+            <figure class="project-shot">
+              <img
+                src="images/Screenshot%202026-04-18%20115719.png"
+                alt="Intelligence Center telemetry"
+                loading="lazy"
+              />
+              <figcaption>Intelligence Center: volume, outcomes, and latency over time.</figcaption>
+            </figure>
+            <figure class="project-shot">
+              <img
+                src="images/Screenshot%202026-04-18%20115759.png"
+                alt="System health per provider"
+                loading="lazy"
+              />
+              <figcaption>System health: per-integration cards with success rate and latency.</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -245,6 +359,8 @@
           <h3>Website Design</h3>
           <ul class="bullet-list">
             <li>Responsive layouts</li>
+            <li>Creative design and integration</li>
+            <li>Personalized design</li>
             <li>Visual hierarchy</li>
             <li>User-focused structure</li>
             <li>Clean interface design</li>
@@ -258,6 +374,7 @@
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
+            <li>Personalized UI and interactions</li>
             <li>Git and GitHub</li>
             <li>Version-controlled workflows</li>
           </ul>
@@ -268,6 +385,7 @@
           <ul class="bullet-list">
             <li>Website setup and deployment</li>
             <li>Domain and DNS configuration</li>
+            <li>Integrating forms, email, analytics, and external APIs</li>
             <li>Search-friendly structure</li>
             <li>Performance-minded implementation</li>
             <li>Security-aware development practices</li>
@@ -318,111 +436,115 @@
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 Ash Morales. Built in VS Code and deployed with GitHub Pages.</p>
+    <p>© 2026 Ash the Dev. Built in VS Code and deployed with GitHub Pages.</p>
   </footer>
 
- <div class="modal-overlay" id="project-modal" aria-hidden="true">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close" id="close-modal-btn" aria-label="Close modal">&times;</button>
+  <div class="modal-overlay" id="project-modal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="close-modal-btn" aria-label="Close modal">&times;</button>
 
-    <p class="section-label">Start a Project</p>
-    <h2 id="modal-title">What are you interested in?</h2>
-    <p class="modal-intro">
-      Choose a starting point, then tell me a little about the project.
-    </p>
+      <p class="section-label">Start a Project</p>
+      <h2 id="modal-title">What are you interested in?</h2>
+      <p class="modal-intro">
+        Choose a starting point, then tell me a little about the project.
+      </p>
 
-    <div class="service-options">
-      <button type="button" class="service-card" data-service="Website Design">
-        <span>Website Design</span>
-      </button>
+      <div class="service-options">
+        <button type="button" class="service-card" data-service="Website Design">
+          <span>Website Design</span>
+        </button>
 
-      <button type="button" class="service-card" data-service="Website Redesign">
-        <span>Website Redesign</span>
-      </button>
+        <button type="button" class="service-card" data-service="Website Redesign">
+          <span>Website Redesign</span>
+        </button>
 
-      <button type="button" class="service-card" data-service="SEO Improvements">
-        <span>SEO Improvements</span>
-      </button>
+        <button type="button" class="service-card" data-service="SEO Improvements">
+          <span>SEO Improvements</span>
+        </button>
 
-      <button type="button" class="service-card" data-service="Website Setup and Deployment">
-        <span>Website Setup &amp; Deployment</span>
-      </button>
+        <button type="button" class="service-card" data-service="Website Setup and Deployment">
+          <span>Website Setup &amp; Deployment</span>
+        </button>
 
-      <button type="button" class="service-card" data-service="Technical Consultation">
-        <span>Technical Consultation</span>
-      </button>
+        <button type="button" class="service-card" data-service="Technical Consultation">
+          <span>Technical Consultation</span>
+        </button>
+      </div>
+
+      <form
+        class="project-form"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="3b1c92e6-6090-4e21-a71a-caad86269790"
+        />
+        <input type="hidden" name="subject" value="New Portfolio Project Inquiry" />
+        <input type="hidden" name="from_name" value="Ash the Dev Portfolio" />
+        <input type="hidden" name="selected_service" id="selected-service-input" value="" />
+        <input type="checkbox" name="botcheck" style="display: none" tabindex="-1" autocomplete="off" />
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+        <label for="message">Project Details</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          placeholder="Hi Ash, I’m interested in a website design project. I’m looking for help with..."
+          required
+        ></textarea>
+
+        <button type="submit" class="btn btn-primary">Send Inquiry</button>
+      </form>
     </div>
+  </div>
 
-    <form
-      class="project-form"
-      action="https://api.web3forms.com/submit"
-      method="POST"
+  <div class="dev-widget" id="dev-widget">
+    <div
+      class="dev-widget-panel"
+      id="dev-widget-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="dev-widget-title"
+      hidden
     >
-      <input
-        type="hidden"
-        name="access_key"
-        value="3b1c92e6-6090-4e21-a71a-caad86269790"
-      />
-      <input
-        type="hidden"
-        name="subject"
-        value="New Portfolio Project Inquiry"
-      />
-      <input
-        type="hidden"
-        name="from_name"
-        value="Ash Morales Portfolio"
-      />
-      <input
-        type="hidden"
-        name="selected_service"
-        id="selected-service-input"
-        value=""
-      />
-      <input
-        type="checkbox"
-        name="botcheck"
-        style="display: none;"
-        tabindex="-1"
-        autocomplete="off"
-      />
-
-      <label for="name">Name</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Your name"
-        required
-      />
-
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="you@example.com"
-        required
-      />
-
-      <label for="message">Project Details</label>
-      <textarea
-        id="message"
-        name="message"
-        rows="6"
-        placeholder="Hi Ash, I’m interested in a website design project. I’m looking for help with..."
-        required
-      ></textarea>
-
-      <button type="submit" class="btn btn-primary">Send Inquiry</button>
-    </form>
-  </div>
-</div>
-
-
+      <button type="button" class="dev-widget-panel-close" id="dev-widget-panel-close" aria-label="Close Ask the Dev">
+        &times;
+      </button>
+      <p class="section-label">Ash the Dev</p>
+      <h2 class="dev-widget-title" id="dev-widget-title">Ask the Dev</h2>
+      <p class="dev-widget-intro">
+        Questions about a site build, SEO cleanup, or deployment? Open the project form
+        or reach out directly—I usually respond within a day or two.
+      </p>
+      <div class="dev-widget-actions">
+        <button type="button" class="btn btn-primary" id="dev-widget-open-modal">Start a project</button>
+        <a class="btn btn-secondary" href="mailto:ash.morales0712@gmail.com">Email</a>
+        <a class="btn btn-secondary" href="https://github.com/ash-the-dev" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+      </div>
     </div>
+    <button
+      type="button"
+      class="dev-widget-launcher"
+      id="dev-widget-toggle"
+      aria-expanded="false"
+      aria-controls="dev-widget-panel"
+    >
+      <img src="images/ash.png" alt="" class="dev-widget-avatar" width="44" height="44" />
+      <span>Ask the Dev</span>
+    </button>
   </div>
 
+  <script src="vine-trail.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
