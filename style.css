@@ -482,7 +482,8 @@ html[data-theme="canvas"] .nav-links a:hover {
 }
 
 html[data-theme="canvas"] .layout-switcher-label {
-  color: rgba(255, 248, 250, 0.58);
+  color: rgba(255, 248, 250, 0.92);
+  text-shadow: 0 1px 2px rgba(24, 6, 14, 0.35);
 }
 
 main {
@@ -584,9 +585,13 @@ main {
 }
 
 .layout-switcher-label {
-  font-size: 0.8rem;
-  color: var(--muted);
-  letter-spacing: 0.04em;
+  display: block;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.92;
 }
 
 .layout-buttons {
@@ -1884,7 +1889,7 @@ body.modal-open {
   }
 
   .layout-switcher-label {
-    font-size: 0.75rem;
+    font-size: clamp(0.88rem, 2.8vw, 0.98rem);
   }
 
   .layout-btn {

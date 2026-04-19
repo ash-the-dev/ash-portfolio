@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   const layoutButtons = document.querySelectorAll(".layout-btn");
-  const savedTheme = localStorage.getItem("portfolio-theme") || "canvas";
+  const savedTheme = localStorage.getItem("portfolio-theme") || "cyber";
 
   html.setAttribute("data-theme", savedTheme);
 
