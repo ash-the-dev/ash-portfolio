@@ -51,10 +51,8 @@
   const leafSprites = ["RLeaves1.png", "RLeave2.png", "RLeaves3.png"];
   const sparkleSprites = ["RSparlkles3.png"];
 
-  /**
-   * Sprite directory relative to site origin (matches /public/assets/… on static hosts).
-   */
-  const SPRITE_BASE = new URL("public/assets/", window.location.href);
+  /** Trail sprite PNGs live under /sprites/ (not /public/ — Vercel static builds only that folder). */
+  const SPRITE_BASE = new URL("sprites/", window.location.href);
 
   function spriteUrl(name) {
     return new URL(name, SPRITE_BASE).href;
