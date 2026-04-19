@@ -1,4 +1,5 @@
 # Ash the Dev – Portfolio Website
+> Frontend developer focused on building clean, responsive, real-world web applications.
 
 My personal portfolio site showcasing the projects I’ve built and the kind of work I’m focused on as a developer.
 
