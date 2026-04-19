@@ -204,7 +204,7 @@ html[data-theme="canvas"] .bg-roses {
   background:
     radial-gradient(circle at 18% 28%, rgba(107, 28, 46, 0.06) 0%, transparent 46%),
     radial-gradient(circle at 82% 72%, rgba(107, 28, 46, 0.045) 0%, transparent 48%),
-    url("images/R1.png");
+    url("/images/R1.png");
   background-size: auto, auto, 110px 110px;
   background-repeat: no-repeat, no-repeat, space;
   background-position: center, center, top left;

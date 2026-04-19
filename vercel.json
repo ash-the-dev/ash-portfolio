@@ -1,6 +1,5 @@
 {
   "rewrites": [
-    { "source": "/favicon.ico", "destination": "/images/ash.png" },
     { "source": "/apple-touch-icon.png", "destination": "/images/ash.png" }
   ]
 }
