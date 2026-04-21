@@ -1103,6 +1103,16 @@ html[data-theme="cyber"] .contact-card {
   color: var(--muted);
 }
 
+.linkedin-badge-wrap {
+  margin-top: 1.35rem;
+  max-width: 100%;
+}
+
+.linkedin-badge-wrap .LI-profile-badge {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .project-card > a {
   display: inline-block;
   margin-top: 0.35rem;
